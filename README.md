@@ -1,7 +1,7 @@
 # Wickly's website
 
 The privacy policy and support page for the Wickly app, published with GitHub
-Pages from `main`:
+Pages from the `gh-pages` branch (`main` has the same files):
 
 - https://jdgrazia.github.io/wickly-site/ (home and support)
 - https://jdgrazia.github.io/wickly-site/privacy.html (privacy policy)
