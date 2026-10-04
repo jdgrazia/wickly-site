@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wickly</title>
+<meta name="description" content="Swipe blind stock charts bullish or bearish, then see which stock it was.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+:root { color-scheme: dark; --bg: #0B0E14; --surface: #131925; --border: #263042;
+  --text: #E8ECF4; --muted: #8B95A8; --link: #A996FF; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+header a { display: inline-flex; align-items: center; gap: 12px; color: var(--text); text-decoration: none; }
+.logo { height: 34px; width: auto; }
+.wordmark { font-size: 32px; font-weight: 900; letter-spacing: -0.5px; }
+h1 { font-size: 30px; line-height: 1.2; margin: 32px 0 8px; }
+h2 { font-size: 21px; margin: 32px 0 8px; }
+h3 { font-size: 18px; margin: 24px 0 4px; }
+p, li { color: var(--text); }
+.muted, .effective { color: var(--muted); }
+a { color: var(--link); }
+ul { padding-left: 22px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 4px 20px; margin: 24px 0; }
+footer { margin-top: 48px; color: var(--muted); font-size: 15px; }
+</style>
+</head>
+<body>
+<main>
+<header><a href="./"><svg class="logo" viewBox="590 670 2915 2650" aria-hidden="true"><rect x="803.4" y="682.7" width="126.1" height="2625.6" rx="63" fill="#FF4D6A"/><rect x="603.9" y="997.7" width="525.1" height="1995.5" rx="84" fill="#FF4D6A"/><rect x="1591.1" y="1312.8" width="126.1" height="1995.5" rx="63" fill="#26D07C"/><rect x="1391.6" y="1627.9" width="525.1" height="1365.3" rx="84" fill="#26D07C"/><rect x="2378.8" y="1312.8" width="126.1" height="1995.5" rx="63" fill="#FF4D6A"/><rect x="2179.3" y="1627.9" width="525.1" height="1365.3" rx="84" fill="#FF4D6A"/><rect x="3166.5" y="682.7" width="126.1" height="2625.6" rx="63" fill="#26D07C"/><rect x="2967.0" y="997.7" width="525.1" height="1995.5" rx="84" fill="#26D07C"/></svg><span class="wordmark">wickly</span></a></header>
+
+<h1>Judge the chart, not the ticker.</h1>
+<p class="muted">Wickly shows you live candlestick charts with the name hidden. Swipe right if a chart looks
+bullish, left if it looks bearish. Call all six timeframes of a stock and Wickly reveals which stock it was and
+how you called it.</p>
+<div class="card">
+<h2>Support</h2>
+<p>Questions, problems or ideas? Email <a href="mailto:altjdgrazia@gmail.com">altjdgrazia@gmail.com</a>. In the app, Settings → Report a
+problem sends us the details we need to fix it.</p>
+</div>
+<div class="card">
+<h2>Privacy</h2>
+<p>Wickly has no accounts, and your calls and verdicts stay on your phone. Read the
+<a href="privacy.html">privacy policy</a>.</p>
+</div>
+<p class="muted">Wickly is for practice and fun. It isn't investment advice.</p>
+
+<footer>Wickly · <a href="./">Home</a> · <a href="privacy.html">Privacy policy</a> · <a href="mailto:altjdgrazia@gmail.com">altjdgrazia@gmail.com</a></footer>
+</main>
+</body>
+</html>
