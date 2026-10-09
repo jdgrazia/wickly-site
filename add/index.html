@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Add me on Wickly</title>
+<meta name="description" content="Swipe blind stock charts bullish or bearish. Tap to add me as a friend.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Add me on Wickly">
+<meta property="og:description" content="Swipe blind stock charts bullish or bearish. Tap to add me as a friend.">
+<meta property="og:image" content="https://jdgrazia.github.io/wickly-site/share.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root { color-scheme: dark; --bg: #0B0E14; --surface: #131925; --border: #263042;
+  --text: #E8ECF4; --muted: #8B95A8; --link: #A996FF; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+header a { display: inline-flex; align-items: center; gap: 12px; color: var(--text); text-decoration: none; }
+.logo { height: 34px; width: auto; }
+.wordmark { font-size: 32px; font-weight: 900; letter-spacing: -0.5px; }
+h1 { font-size: 30px; line-height: 1.2; margin: 32px 0 8px; }
+h2 { font-size: 21px; margin: 32px 0 8px; }
+h3 { font-size: 18px; margin: 24px 0 4px; }
+p, li { color: var(--text); }
+.muted, .effective { color: var(--muted); }
+a { color: var(--link); }
+ul { padding-left: 22px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 4px 20px; margin: 24px 0; }
+.button { display: inline-block; background: #7C5CFF; color: #fff; font-weight: 800; text-decoration: none;
+  padding: 14px 28px; border-radius: 999px; }
+footer { margin-top: 48px; color: var(--muted); font-size: 15px; }
+</style>
+</head>
+<body>
+<main>
+<header><a href=".././"><svg class="logo" viewBox="590 670 2915 2650" aria-hidden="true"><rect x="803.4" y="682.7" width="126.1" height="2625.6" rx="63" fill="#FF4D6A"/><rect x="603.9" y="997.7" width="525.1" height="1995.5" rx="84" fill="#FF4D6A"/><rect x="1591.1" y="1312.8" width="126.1" height="1995.5" rx="63" fill="#26D07C"/><rect x="1391.6" y="1627.9" width="525.1" height="1365.3" rx="84" fill="#26D07C"/><rect x="2378.8" y="1312.8" width="126.1" height="1995.5" rx="63" fill="#FF4D6A"/><rect x="2179.3" y="1627.9" width="525.1" height="1365.3" rx="84" fill="#FF4D6A"/><rect x="3166.5" y="682.7" width="126.1" height="2625.6" rx="63" fill="#26D07C"/><rect x="2967.0" y="997.7" width="525.1" height="1995.5" rx="84" fill="#26D07C"/></svg><span class="wordmark">wickly</span></a></header>
+
+<h1 id="title">Add a friend on Wickly</h1>
+<p class="muted">Wickly is where you swipe blind stock charts bullish or bearish, then see which stock it was.</p>
+<p id="open-row"><a class="button" id="open" href="https://play.google.com/store/apps/details?id=app.wickly">Open in Wickly</a></p>
+<p class="muted" id="get">No Wickly yet? <a href="https://play.google.com/store/apps/details?id=app.wickly">Get it on Google Play</a>, pick your name in Friends, then
+open this link again.</p>
+<p class="muted" id="elsewhere" hidden>Open this link on your Android phone to add them in Wickly, which is on
+<a href="https://play.google.com/store/apps/details?id=app.wickly">Google Play</a>.</p>
+<script>
+(function () {
+  var name = (new URLSearchParams(location.search).get('n') || '').trim();
+  if (!/^[A-Za-z0-9][A-Za-z0-9 _.-]{1,18}[A-Za-z0-9]$/.test(name)) name = '';
+  if (name) {
+    document.getElementById('title').textContent = 'Add ' + name + ' as a friend on Wickly';
+    document.title = 'Add ' + name + ' on Wickly';
+  }
+  if (!/Android/i.test(navigator.userAgent)) {
+    document.getElementById('open-row').hidden = true;
+    document.getElementById('get').hidden = true;
+    document.getElementById('elsewhere').hidden = false;
+    return;
+  }
+  var open = document.getElementById('open');
+  open.href = 'intent://add' + (name ? '?n=' + encodeURIComponent(name) : '') +
+    '#Intent;scheme=wickly;package=app.wickly;S.browser_fallback_url=' + encodeURIComponent('https://play.google.com/store/apps/details?id=app.wickly') + ';end';
+  // Straight into Wickly, or on to Google Play, when the browser lets a page
+  // go there by itself; the button does it otherwise.
+  if (name) location.replace(open.href);
+})();
+</script>
+
+<footer>Wickly · <a href=".././">Home</a> · <a href="../privacy.html">Privacy policy</a> · <a href="mailto:altjdgrazia@gmail.com">altjdgrazia@gmail.com</a></footer>
+</main>
+</body>
+</html>
